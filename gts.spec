@@ -1,5 +1,5 @@
 Summary:	GNU Triangulated Surface Library
-Summary(pl):	Trójk±tna biblioteka powierzchni GNU
+Summary(pl):	Biblioteka triangulowanych powierzchni GNU
 Name:		gts
 Version:	0.7.3
 Release:	1
@@ -20,13 +20,13 @@ collision and intersection detection, triangle strips generation for
 fast rendering.
 
 %description -l pl
-GTS oznacza trójk±tn± bibliotekê powierzchni GNU. Zawiera wiele
-u¿ytecznych funkcji do operacji na trójk±tnych powierzchniach
-w³±czaj±c, ale nie ograniczaj±c siê do modeli w wielu
-rozdzielczo¶ciach, triangulacji Delaunay i Constrained Delaunay,
-zestawów operacji na powierzchniach(przeciêcia, zbiory itd...),
-wykrywanie kolizji i przeciêæ, szybkie usuwanie trójk±tów dla
-szybkiego renderingu.
+GTS oznacza bibliotekê triangulowanych powierzchni GNU. Zawiera wiele
+u¿ytecznych funkcji do operacji na triangulowanych powierzchniach, w
+tym miêdzy innymi modele w wielu rozdzielczo¶ciach, triangulacje
+Delaunaya i ograniczona Delaunaya, zestaw operacji na powierzchniach
+(przeciêcia, sumy itd...), drzewa prostopad³o¶cianów ograniczaj±cych
+do wydajnego wykrywania kolizji i przeciêæ, szybkie generowanie pasów
+trójk±tów dla szybkiego renderingu.
 
 %package devel
 Summary:	Header files for gts library
