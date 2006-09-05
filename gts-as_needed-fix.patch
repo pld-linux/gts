@@ -1,0 +1,12 @@
+diff -Nur gts-0.7.6.orig/src/Makefile.am gts-0.7.6.as_needed-fix/src/Makefile.am
+--- gts-0.7.6.orig/src/Makefile.am	2005-01-19 06:48:22.000000000 +0200
++++ gts-0.7.6.as_needed-fix/src/Makefile.am	2006-09-05 12:10:04.000000000 +0300
+@@ -15,6 +15,8 @@
+ libgts_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)\
+ 	-release $(LT_RELEASE) -export-dynamic
+ 
++libgts_la_LIBADD = -lm
++
+ libgts_la_DEPENDENCIES = \
+ 	predicates_init.h
+ 
