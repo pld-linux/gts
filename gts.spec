@@ -8,7 +8,10 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/gts/%{name}-%{version}.tar.gz
 # Source0-md5:	9f710aefd2ed9b3cc1b1216171fc5a8a
 Patch0:		%{name}-alpha.patch
+Patch1:		%{name}-as_needed-fix.patch
 URL:		http://gts.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -56,8 +59,13 @@ Statyczna biblioteka gts.
 %prep
 %setup -q
 #patch0 -p1
+%patch1 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
