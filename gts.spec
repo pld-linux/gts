@@ -7,11 +7,14 @@ License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gts/%{name}-%{version}.tar.gz
 # Source0-md5:	9f710aefd2ed9b3cc1b1216171fc5a8a
-Patch0:		%{name}-alpha.patch
-Patch1:		%{name}-as_needed-fix.patch
+Patch0:		%{name}-as_needed-fix.patch
 URL:		http://gts.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	glib2-devel >= 1:2.4.0
+BuildRequires:	libtool
+BuildRequires:	pkgconfig
+Requires:	glib2 >= 1:2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,6 +40,7 @@ Summary:	Header files for gts library
 Summary(pl):	Pliki nag³ówkowe biblioteki gts
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	glib2-devel >= 1:2.4.0
 
 %description devel
 Header files for gts library.
@@ -58,8 +62,7 @@ Statyczna biblioteka gts.
 
 %prep
 %setup -q
-#patch0 -p1
-%patch1 -p1
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -85,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog* NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/gts[2ct]*
-%attr(755,root,root) %{_bindir}/[st]*
+%attr(755,root,root) %{_bindir}/[dst]*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
