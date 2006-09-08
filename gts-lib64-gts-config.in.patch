@@ -1,0 +1,11 @@
+--- gts-0.7.6/src/gts-config.in.org	2005-01-19 04:47:06.000000000 +0000
++++ gts-0.7.6/src/gts-config.in	2006-09-08 23:29:27.000000000 +0000
+@@ -128,7 +128,7 @@
+ 	if test "$lib_gthread" = "yes"; then
+ 	    glib_libs="$glib_libs $glib_thread_libs"
+ 	fi
+-	glib_libs="-L${exec_prefix}/lib -lgts $glib_libs -lm"
++	glib_libs="-L${exec_prefix}/lib64 -lgts $glib_libs -lm"
+ 	glib_libs=`uniquify "$glib_libs"`
+ 	echo $glib_libs
+ fi
