@@ -64,10 +64,10 @@ Statyczna biblioteka gts.
 %prep
 %setup -q
 %patch0 -p1
-
-%ifarch x86_64
+%if "%{_lib}" == "lib64"
 %patch1 -p1
 %endif
+
 %build
 %{__libtoolize}
 %{__aclocal}
