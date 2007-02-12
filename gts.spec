@@ -1,5 +1,5 @@
 Summary:	GNU Triangulated Surface Library
-Summary(pl):	Biblioteka triangulowanych powierzchni GNU
+Summary(pl.UTF-8):   Biblioteka triangulowanych powierzchni GNU
 Name:		gts
 Version:	0.7.6
 Release:	2
@@ -27,18 +27,18 @@ Constrained Delaunay triangulations, set operations on surfaces
 collision and intersection detection, triangle strips generation for
 fast rendering.
 
-%description -l pl
-GTS oznacza bibliotekÍ triangulowanych powierzchni GNU. Zawiera wiele
-uøytecznych funkcji do operacji na triangulowanych powierzchniach, w
-tym miÍdzy innymi modele w wielu rozdzielczo∂ciach, triangulacje
+%description -l pl.UTF-8
+GTS oznacza bibliotekƒô triangulowanych powierzchni GNU. Zawiera wiele
+u≈ºytecznych funkcji do operacji na triangulowanych powierzchniach, w
+tym miƒôdzy innymi modele w wielu rozdzielczo≈õciach, triangulacje
 Delaunaya i ograniczona Delaunaya, zestaw operacji na powierzchniach
-(przeciÍcia, sumy itd...), drzewa prostopad≥o∂cianÛw ograniczaj±cych
-do wydajnego wykrywania kolizji i przeciÍÊ, szybkie generowanie pasÛw
-trÛjk±tÛw dla szybkiego renderingu.
+(przeciƒôcia, sumy itd...), drzewa prostopad≈Ço≈õcian√≥w ograniczajƒÖcych
+do wydajnego wykrywania kolizji i przeciƒôƒá, szybkie generowanie pas√≥w
+tr√≥jkƒÖt√≥w dla szybkiego renderingu.
 
 %package devel
 Summary:	Header files for gts library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki gts
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki gts
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.4.0
@@ -46,19 +46,19 @@ Requires:	glib2-devel >= 1:2.4.0
 %description devel
 Header files for gts library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki gts.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki gts.
 
 %package static
 Summary:	Static gts library
-Summary(pl):	Statyczna biblioteka gts
+Summary(pl.UTF-8):   Statyczna biblioteka gts
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static gts library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka gts.
 
 %prep
