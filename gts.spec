@@ -1,5 +1,5 @@
 Summary:	GNU Triangulated Surface Library
-Summary(pl.UTF-8):   Biblioteka triangulowanych powierzchni GNU
+Summary(pl.UTF-8):	Biblioteka triangulowanych powierzchni GNU
 Name:		gts
 Version:	0.7.6
 Release:	2
@@ -38,7 +38,7 @@ trójkątów dla szybkiego renderingu.
 
 %package devel
 Summary:	Header files for gts library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki gts
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki gts
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 1:2.4.0
@@ -51,7 +51,7 @@ Pliki nagłówkowe biblioteki gts.
 
 %package static
 Summary:	Static gts library
-Summary(pl.UTF-8):   Statyczna biblioteka gts
+Summary(pl.UTF-8):	Statyczna biblioteka gts
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
