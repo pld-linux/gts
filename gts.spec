@@ -2,7 +2,7 @@ Summary:	GNU Triangulated Surface Library
 Summary(pl.UTF-8):	Biblioteka triangulowanych powierzchni GNU
 Name:		gts
 Version:	0.7.6
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gts/%{name}-%{version}.tar.gz
