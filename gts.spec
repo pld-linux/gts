@@ -1,14 +1,15 @@
 Summary:	GNU Triangulated Surface Library
-Summary(pl.UTF-8):	Biblioteka triangulowanych powierzchni GNU
+Summary(pl.UTF-8):	Biblioteka GNU do triangulowanych powierzchni
 Name:		gts
 Version:	0.7.6
-Release:	3
-License:	LGPL
+Release:	4
+License:	LGPL v2+
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/gts/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/gts/%{name}-%{version}.tar.gz
 # Source0-md5:	9f710aefd2ed9b3cc1b1216171fc5a8a
 Patch0:		%{name}-as_needed-fix.patch
 Patch1:		%{name}-lib64-gts-config.in.patch
+Patch2:		%{name}-am.patch
 URL:		http://gts.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -28,13 +29,13 @@ collision and intersection detection, triangle strips generation for
 fast rendering.
 
 %description -l pl.UTF-8
-GTS oznacza bibliotekę triangulowanych powierzchni GNU. Zawiera wiele
-użytecznych funkcji do operacji na triangulowanych powierzchniach, w
-tym między innymi modele w wielu rozdzielczościach, triangulacje
-Delaunaya i ograniczona Delaunaya, zestaw operacji na powierzchniach
-(przecięcia, sumy itd...), drzewa prostopadłościanów ograniczających
-do wydajnego wykrywania kolizji i przecięć, szybkie generowanie pasów
-trójkątów dla szybkiego renderingu.
+GTS oznacza bibliotekę GNU do triangulowanych powierzchni. Zawiera
+wiele użytecznych funkcji do operacji na triangulowanych
+powierzchniach, w tym między innymi modele w wielu rozdzielczościach,
+triangulacje Delaunaya i ograniczona Delaunaya, zestaw operacji na
+powierzchniach (przecięcia, sumy itd...), drzewa prostopadłościanów
+ograniczających do wydajnego wykrywania kolizji i przecięć, szybkie
+generowanie pasów trójkątów dla szybkiego renderingu.
 
 %package devel
 Summary:	Header files for gts library
@@ -67,6 +68,7 @@ Statyczna biblioteka gts.
 %if "%{_lib}" == "lib64"
 %patch1 -p1
 %endif
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -91,20 +93,29 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog* NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/gts[2ct]*
-%attr(755,root,root) %{_bindir}/[dst]*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_bindir}/delaunay
+%attr(755,root,root) %{_bindir}/gts2dxf
+%attr(755,root,root) %{_bindir}/gts2oogl
+%attr(755,root,root) %{_bindir}/gts2stl
+%attr(755,root,root) %{_bindir}/gtscheck
+%attr(755,root,root) %{_bindir}/gtscompare
+%attr(755,root,root) %{_bindir}/gtstemplate
+%attr(755,root,root) %{_bindir}/happrox
+%attr(755,root,root) %{_bindir}/stl2gts
+%attr(755,root,root) %{_bindir}/transform
+%attr(755,root,root) %{_libdir}/libgts-0.7.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgts-0.7.so.5
 
 %files devel
 %defattr(644,root,root,755)
-#%doc doc/html/*
+%doc doc/html/*.html
 %attr(755,root,root) %{_bindir}/gts-config
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_aclocaldir}/*.m4
-%{_pkgconfigdir}/*.pc
+%attr(755,root,root) %{_libdir}/libgts.so
+%{_libdir}/libgts.la
+%{_includedir}/gts*.h
+%{_aclocaldir}/gts.m4
+%{_pkgconfigdir}/gts.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libgts.a
