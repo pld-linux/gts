@@ -2,7 +2,7 @@ Summary:	GNU Triangulated Surface Library
 Summary(pl.UTF-8):	Biblioteka GNU do triangulowanych powierzchni
 Name:		gts
 Version:	0.7.6
-Release:	5
+Release:	6
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/gts/%{name}-%{version}.tar.gz
@@ -10,11 +10,13 @@ Source0:	http://downloads.sourceforge.net/gts/%{name}-%{version}.tar.gz
 Patch0:		%{name}-as_needed-fix.patch
 Patch1:		%{name}-lib64-gts-config.in.patch
 Patch2:		%{name}-am.patch
+Patch3:		%{name}-netpbm.patch
 URL:		http://gts.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 1:2.4.0
 BuildRequires:	libtool
+BuildRequires:	netpbm-devel
 BuildRequires:	pkgconfig
 Requires:	glib2 >= 1:2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -69,6 +71,7 @@ Statyczna biblioteka gts.
 %patch1 -p1
 %endif
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}

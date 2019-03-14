@@ -1,0 +1,12 @@
+diff -urN gts-0.7.6.orig/examples/happrox.c gts-0.7.6/examples/happrox.c
+--- gts-0.7.6.orig/examples/happrox.c	2019-03-14 22:54:35.429416051 +0100
++++ gts-0.7.6/examples/happrox.c	2019-03-14 22:54:54.532590813 +0100
+@@ -21,7 +21,7 @@
+ #include <stdlib.h>
+ #include <locale.h>
+ #include <string.h>
+-#include <pgm.h>
++#include <netpbm/pgm.h>
+ #include "config.h"
+ #ifdef HAVE_GETOPT_H
+ #  include <getopt.h>
