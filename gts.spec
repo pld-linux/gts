@@ -2,7 +2,7 @@ Summary:	GNU Triangulated Surface Library
 Summary(pl.UTF-8):	Biblioteka GNU do triangulowanych powierzchni
 Name:		gts
 Version:	0.7.6
-Release:	6
+Release:	7
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/gts/%{name}-%{version}.tar.gz
@@ -87,6 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgts.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -114,7 +117,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/html/*.html
 %attr(755,root,root) %{_bindir}/gts-config
 %attr(755,root,root) %{_libdir}/libgts.so
-%{_libdir}/libgts.la
 %{_includedir}/gts*.h
 %{_aclocaldir}/gts.m4
 %{_pkgconfigdir}/gts.pc
